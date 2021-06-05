@@ -34,3 +34,30 @@ print('總共', len(new), '筆資料長度小於100')
 print(new[0])
 print(new[1])
 
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print('一共有',len(good) , '筆留言提到good')
+print(good[0])
+
+#清單快寫法
+#list comprehension
+#第一個d ==> good.append(d)
+good = [d for d in data if 'good' in d]
+# output =[ (number-1) for number in reference if number %2 = 0 ]
+#             運算          變數        清單         篩選條件
+print ('一共有',len(good) , '筆留言提到good')
+
+#裝1進入清單
+good = []
+good = [1 for d in data if 'good' in d]
+print(len(good))
+
+#運算結果 'bad' in d
+#檢查100萬筆留言
+#是否含有bad 字串
+#結果會是100萬筆 True/False
+bad = ['bad' in d for d in data]
+print(len(bad))
+print(bad)
